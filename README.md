@@ -1,6 +1,6 @@
-# Vacshild - Vaccine Registration System
+# Vacshield - Webhook
 
-A application designed for efficient vaccine registration, scheduling, and status management. The system focuses on automation, offering features like user scheduling based on vaccine center capacities, real-time notifications, and an intuitive admin panel for easy record management.
+An application designed for efficient vaccine registration, scheduling, and status management. The system focuses on automation, offering features like user scheduling based on vaccine center capacities, an intuitive admin panel for easy record management, and seamless webhook integration with Zapier and Google Forms.
 
 ## Features
 
@@ -9,6 +9,11 @@ A application designed for efficient vaccine registration, scheduling, and statu
 -   **Automated Scheduling**: Automatically schedule users daily, respecting center limits and skipping weekends.
 -   **Notifications**: Notify users about their schedules via email.
 -   **Admin Panel**: Filter and manage records through a user-friendly interface powered by FilamentPHP.
+-   **Zapier + Google Form Integration**: Integrate Google Forms with the system via Zapier webhooks to automate user registration.
+
+## Demonstration
+
+[Watch the demonstration video](https://drive.google.com/file/d/11tHVgh8LJxnlmiEeG_Knk-cXIYnKe-qy/view?usp=sharing)
 
 ## Getting Started
 
@@ -46,43 +51,51 @@ Follow these instructions to set up the project.
     cp .env.example .env
     ```
 
-6. **Generate the application key:**
+6. **Set ngrok URL in the `.env` file for testing:**
+
+    Replace `APP_URL` with ngrok URL to ensure Zapier works correctly.
+
+    ```env
+    APP_URL=https://your-ngrok-url.ngrok-free.app
+    ```
+
+7. **Generate the application key:**
 
     ```shell
     php artisan key:generate
     ```
 
-7. **Run database migrations:**
+8. **Run database migrations:**
 
     ```shell
     php artisan migrate
     ```
 
-8. **Seed the database:**
+9. **Seed the database:**
 
     ```shell
     php artisan db:seed
     ```
 
-9. **Start the local development server:**
+10. **Start the local development server:**
 
     ```shell
     php artisan serve
     ```
 
-10. **Compile front-end assets:**
+11. **Compile front-end assets:**
 
     ```shell
     npm run dev
     ```
 
-11. **Start the queue worker:**
+12. **Start the queue worker:**
 
     ```shell
     php artisan queue:work
     ```
 
-12. **Run the scheduler manually (for local development):**
+13. **Run the scheduler manually (for local development):**
 
     ```shell
     php artisan schedule:work
